@@ -9,6 +9,7 @@
     "lint:prettier": "prettier --ignore-path .gitignore -l \"**/*.{json,yaml,yml,ts,vue}\"",
     "lint:tsc": "nuxi typecheck",
     "start": "node .output/server/index.mjs",
+    "pretest": "nuxi prepare",
     "test": "jest"
   },
   "devDependencies": {
