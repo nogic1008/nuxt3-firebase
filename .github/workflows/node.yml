@@ -1,0 +1,68 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v2.5.0
+        with:
+          node-version: 16
+          cache: yarn
+
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Prettier
+        run: yarn lint:prettier
+      - name: ESLint
+        run: yarn lint:eslint
+      - name: Type Check
+        run: yarn lint:tsc
+
+  build:
+    name: Build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v2.5.0
+        with:
+          node-version: 16
+          cache: yarn
+
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+  test:
+    name: Unit Test
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v2.5.0
+        with:
+          node-version: 16
+          cache: yarn
+
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Test
+        run: yarn test --ci --colors
+      - name: Report Code Coverage to codecov
+        uses: codecov/codecov-action@v2.1.0
