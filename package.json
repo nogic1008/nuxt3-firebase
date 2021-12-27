@@ -8,12 +8,14 @@
     "lint:eslint": "eslint --ext .ts,.vue --ignore-path .gitignore .",
     "lint:prettier": "prettier --ignore-path .gitignore -l \"**/*.{json,yaml,yml,ts,vue}\"",
     "lint:tsc": "nuxi typecheck",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "test": "jest"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
+    "@vue/test-utils": "^2.0.0-rc.18",
     "@vue/vue3-jest": "^27.0.0-alpha.4",
     "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
@@ -26,6 +28,7 @@
     "nuxt3": "latest",
     "prettier": "^2.5.1",
     "ts-jest": "^27.1.2",
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.4",
     "vue-tsc": "^0.30.1"
   }
