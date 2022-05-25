@@ -10,7 +10,7 @@
     "lint:tsc": "nuxi typecheck",
     "start": "node .output/server/index.mjs",
     "pretest": "nuxi prepare",
-    "test": "jest"
+    "test": "vitest run"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^8.0.0",

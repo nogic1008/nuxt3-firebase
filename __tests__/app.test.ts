@@ -1,4 +1,4 @@
-import { describe, expect, test } from '@jest/globals'
+import { describe, expect, test } from 'vitest'
 import { mount } from '@vue/test-utils'
 
 import App from '~/app.vue'
