@@ -14,8 +14,6 @@
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.8.0",
-    "@typescript-eslint/parser": "^5.8.0",
     "@vue/test-utils": "^2.0.0-rc.18",
     "c8": "^7.11.3",
     "eslint": "^8.5.0",
